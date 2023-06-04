@@ -1,0 +1,189 @@
+@font-face {
+    font-family: lyt;
+    src: url("src/lyt.TTF");
+}
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    transition: all 0.5s;
+    font-family: '楷体';
+}
+body{
+    background: url(src/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+.header{
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    justify-content: space-between;
+    background: rgba(2, 92, 64, 0.4);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    border-radius: 25px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    filter: none;
+}
+.header span{
+    font-family: '楷体';
+    font-size: 32px;
+}
+.logo{
+    font-size: 6vh;
+    font-family: 'lyt';
+}
+.body{
+    filter: none;
+    margin: 5vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    display: flex;
+    justify-items: center;
+    margin-top: 8vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    min-height: 300px;
+    max-height: 30vh;
+    min-width: 260px;
+    max-width: 30vw;
+    background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    border-radius: 25px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+.card h1{
+    font-family: '楷体';
+    font-size: 60px;
+}
+.card:hover{
+    -webkit-box-shadow:0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+}
+.login{
+    -webkit-box-shadow:0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(100px);
+    position: absolute;
+    display: none;
+    bottom: 3%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.login span{
+    display: block;
+    font-size: 5vw;
+    margin-top: 10vh;
+}
+.login input{
+    margin-top: 10vh;
+    padding: 2px;
+    border-radius: 20px;
+    border: 0;
+    height: 6vh;
+    width: 40vw;
+    outline: none;
+    font-size: 5vh;
+    text-align: center;
+}
+.login input:focus{
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+.login button{
+    display: block;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 10vh;
+    width: 40vw;
+    height: 6vh;
+    font-size: 5vh;
+}
+.sscar{
+    -webkit-box-shadow:0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(100px);
+    position: absolute;
+    display: none;
+    bottom: 3%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.sscar span{
+    display: block;
+    font-size: 5vw;
+    margin-top: 10vh;
+}
+#carplace{
+    display: block;
+    font-size: 5vw;
+    margin-top: 10vh;
+}
+.sscar button{
+    display: block;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 10vh;
+    width: 40vw;
+    height: 6vh;
+    font-size: 5vh;
+}
+
+.endcar{
+    -webkit-box-shadow:0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 131px 0px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(100px);
+    position: absolute;
+    display: none;
+    bottom: 3%;
+    left: 5%;
+    width: 90%;
+    height: 70%;
+    border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.endcar span{
+    display: block;
+    font-size: 5vw;
+    margin-top: 10vh;
+}
+.endcar button{
+    display: block;
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 10vh;
+    width: 40vw;
+    height: 6vh;
+    font-size: 5vh;
+}

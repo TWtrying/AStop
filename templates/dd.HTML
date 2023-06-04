@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="icon" href="static/src/logo.svg">
+    <title>AStop 付款界面</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            user-select: none;
+            transition: all 0.5s;
+            font-family: '宋体';
+        }
+        body{
+            background: url(static/src/bg.jpg) no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3%;
+        }
+        h1{
+            font-size: 3vw;
+        }
+        .paywin{
+            margin: 20px;
+            padding: 20px;
+            border-radius: 30px;
+            display: flex;
+            background-color: white;
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        }
+        .paywin img{
+            height: 100%;
+            width: 100%;
+            -webkit-user-drag: none;
+        }
+        button{
+            display: block;
+            border-radius: 20px;
+            border: 0;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+            width: 40vw;
+            height: 6vh;
+            font-size: 3vh;
+        }
+    </style>
+    <script>
+        const Http = new XMLHttpRequest();
+        function endpay(){
+            var id = document.getElementById('userid').innerHTML;
+            var url = "http://127.0.0.1:6868/pay?id=" + id+"&s="+'1';
+            Http.open("GET",url);
+            Http.send();
+            Http.onreadystatechange = function(e){
+                if(Http.readyState == 4 && Http.status == 200){
+                    var t = JSON.parse(Http.responseText);
+                    if(t["code"]=='0'){
+                        alert("感谢使用!")
+                        window.open('http://127.0.0.1:6868/','_self');
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id="userid">{{userid}}</p>
+    <h1>请扫描下方二维码支付</h1>
+    <h1>Please scan the QR code below to pay</h1>
+    <br>
+    <div class="paywin">
+        <img src="static/src/payqr.jpg">
+    </div>
+    <button onclick="endpay()">我已支付</button>
+</body>
+</html>

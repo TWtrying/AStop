@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="icon" href="static/src/logo.svg">
+    <link rel="stylesheet" type="text/css" href="static/CSS.CSS">
+    <title>AStop 停车管理系统</title>
+    <script src="static/JS.JS"></script>
+</head>
+<body onload="init()">
+    <div class="header" id="header">
+            <h1 class="logo">AStop</h1>
+            <span id="Ntime">上午好:京ALS000</span>
+    </div>
+
+    <div class="body" id="body">
+        <div class="card" onclick="sscaro()">
+            <h1>开始停车</h1>
+        </div>
+        <div class="card" onclick="endcaro()">
+            <h1>结束停车</h1>
+        </div>
+        <div class="card" onclick="logino()">
+            <h1>我的信息</h1>
+        </div>
+    </div>
+
+<!-- login登录车牌号页面 -->
+    <div class="login" id="login">
+        <span>请输入您的车牌号</span>
+        <input id="userid" type="text" maxlength="7" required autofocus>
+        <br>
+        <button type="button" onclick="loginc()">登录</button>
+    </div>
+
+
+<!-- 实时停车页面 -->
+        <div id="sscar" class="sscar">
+            <span>您的车位在</span>
+            <span id="carplace">Loading......</span>
+            <br>
+            <button type="button" onclick="sscarc()">确定</button>
+        </div>
+
+<!-- 结束停车页面 -->
+        <div id="endcar" class="endcar">
+            <span>祝您一路顺风！</span>
+            <br>
+            <span id="endtext">Good luck on your journey!</span>
+            <br>
+            <button type="button" onclick="endcarc()">确定</button>
+        </div>
+</body>
+</html>

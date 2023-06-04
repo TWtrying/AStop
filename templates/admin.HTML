@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>AStop Manage</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: '楷体';
+            transition: all 1s;
+        }
+        body{
+            background: url(static/src/bg.jpg) no-repeat center center fixed;
+            background-size: cover;
+        }
+        .header{
+            position: fixed;
+            display: flex;
+            background-color: rgb(0, 255, 183);
+            height: 6%;
+            width: 90%;
+            margin-left: 5%;
+            border-radius: 30px;
+            align-items: center;
+            justify-content: center;
+            -moz-box-shadow:0px 3px 10px #333333;
+            -webkit-box-shadow:0px 3px 10px #333333;
+            box-shadow:0px 3px 10px #333333;
+        }
+        #text-input{
+            margin-top: 20%;
+            width: 70%;
+            height: 50px;
+            margin-left: 15%;
+            text-align: center;
+            font-size: 2rem;
+            border-radius: 20px;
+        }
+        .butlist{
+            width: 70%;
+            margin-left: 15%;
+            height: 50px;
+            display:flex;
+            align-items: center;
+            margin-top: 60px;
+            justify-content: space-around;
+        }
+        .butlist button{
+            width: 20%;
+            height: 50px;
+            border-radius: 20px;
+            border: 0;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body">
+    <div class="header">
+        <h1>AStop后台管理页面</h1>
+    </div>
+    <input id="text-input" type="text" placeholder="输入您操作的车位号或车牌号" readonly="readonly">
+    <div class="butlist">
+        <button id="but1" onclick="but(1)">移除车位</button>
+        <button id="but2" onclick="but(2)">添加车位</button>
+        <button id="but3" onclick="but(3)">修改车位</button>
+        <button id="but4" onclick="but(4)">查询车位</button>
+    </div>
+    <div></div>
+</body>
+<script>
+    const Http = new XMLHttpRequest();
+    function but(mode){
+        if(mode==1){
+        var url = "http://127.0.0.1:6868/adminop?mode=" + mode + "&text=";
+        Http.open("GET",url);
+        Http.send();
+        Http.onreadystatechange = function(e){
+            if(Http.readyState == 4 && Http.status == 200){
+                var t = JSON.parse(Http.responseText);
+                console.log(t);
+                if(t["code"]==0 || t["code"]==1){
+                    updateusername();
+                    bgfilter(0);
+                    document.getElementById("login").style.display = "none";
+                }
+                if(t["code"]==2){
+                    document.getElementById("userid").value = "输入错误!";
+                }
+            }
+        }
+
+        }
+        else if(mode==2){
+
+        }
+        else if(mode==3){
+            
+        }
+        else if(mode==4){
+            
+        }
+    }
+</script>
+</html>
